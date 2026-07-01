@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment{
-        FINAL_VERSION='1.0'
+        FINAL_VERSION ='1.0'
     }
     stages{
          stage('Checkout') {
