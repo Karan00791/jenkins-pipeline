@@ -8,7 +8,7 @@ pipeline{
          }
         stage('Build'){
             steps{
-                echo 'building the application code'
+                echo 'building the application code webhoooooooooks'
             }
         }
         stage('Test'){
