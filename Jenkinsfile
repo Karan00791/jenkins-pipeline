@@ -7,7 +7,7 @@ pipeline{
             }
         stage('Build'){
             steps{
-                echo 'building the application code'
+                echo 'building the application code in karan'
             }
         }
         stage('Test'){
