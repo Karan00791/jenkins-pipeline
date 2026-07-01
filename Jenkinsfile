@@ -16,7 +16,7 @@ pipeline{
         }
         stage('Test'){
             steps{
-                echo "testing the application code with $(FINAL_VERSION)"
+                echo "testing the application code with ${FINAL_VERSION}"
             }
         }
         stage('Deploy'){
