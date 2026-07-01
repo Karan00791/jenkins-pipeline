@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    environment{
+        FINAL_VERSION='1.0'
+    }
     stages{
          stage('Checkout') {
             steps {
@@ -13,7 +16,7 @@ pipeline{
         }
         stage('Test'){
             steps{
-                echo 'testing the application code'
+                echo "testing the application code with $(FINAL_VERSION)"
             }
         }
         stage('Deploy'){
