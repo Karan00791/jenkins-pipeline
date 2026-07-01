@@ -5,6 +5,7 @@ pipeline{
             steps {
                 checkout scm
             }
+         }
         stage('Build'){
             steps{
                 echo 'building the application code'
