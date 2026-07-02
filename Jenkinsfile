@@ -2,6 +2,7 @@ pipeline{
     agent any
     environment{
         FINAL_VERSION ='1.0'
+        SERVER_CREDS =credentials(demo-server-cred')
     }
     stages{
          stage('Checkout') {
@@ -22,6 +23,7 @@ pipeline{
         stage('Deploy'){
             steps{
                 echo 'deploying the application code'
+                echo"deploying the code with ${SERVER_CREDS}
             }
         }
     }
