@@ -2,7 +2,7 @@ pipeline{
     agent any
     environment{
         FINAL_VERSION ='1.0'
-        SERVER_CREDS =credentials(demo-server-cred')
+        SERVER_CREDS =credentials('demo-server-cred')
     }
     stages{
          stage('Checkout') {
