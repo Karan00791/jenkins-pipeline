@@ -23,7 +23,7 @@ pipeline{
         stage('Deploy'){
             steps{
                 echo 'deploying the application code'
-                echo"deploying the code with ${SERVER_CREDS}
+                echo "deploying the code with ${SERVER_CREDS}"
             }
         }
     }
