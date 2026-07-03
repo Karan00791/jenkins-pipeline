@@ -23,6 +23,7 @@ pipeline{
         stage('Deploy'){
             steps{
                 echo 'deploying the application code'
+                sh "sudo cp /home/ubuntu/.m2/repository/com/efsavage/hello-world-war/1.0.0/hello-world-war-1.0.0.war /var/lib/tomcat10/webapps "
                 
             }
         }
