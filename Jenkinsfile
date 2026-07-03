@@ -1,9 +1,8 @@
 pipeline{
     agent any
-    environment{
-        FINAL_VERSION ='1.0'
-        SERVER_CREDS =credentials('demo-server-cred')
-    }
+   tools{
+    maven'Maven'
+   }
     stages{
          stage('Checkout') {
             steps {
@@ -13,6 +12,7 @@ pipeline{
         stage('Build'){
             steps{
                 echo 'building the application code webhoooooooooks'
+                sh "mvn install"
             }
         }
         stage('Test'){
@@ -23,7 +23,7 @@ pipeline{
         stage('Deploy'){
             steps{
                 echo 'deploying the application code'
-                echo "deploying the code with ${SERVER_CREDS}"
+                
             }
         }
     }
