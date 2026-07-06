@@ -37,7 +37,8 @@ pipeline{
                 echo "testing the application code with"
                 sh "mvn test"
             }
-            stage('pacakage'){
+        }
+            stage('pacaakage'){
                 steps{
                     echo'creating the war file'
                     sh 'mvn package'
