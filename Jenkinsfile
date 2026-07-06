@@ -53,7 +53,7 @@ pipeline{
         }
         }
         
-    }
+    
     post{
 
      always{
@@ -69,3 +69,4 @@ echo 'application was successfully build and deployed'
     }
 
     }
+}
