@@ -12,7 +12,7 @@ pipeline{
     stages{
          stage('Checkout') {
             steps {
-                echo 'dowloading source code from GIT HUB'
+                echo 'dowloading source code from GIT HUB repo'
                 checkout scm
                 sh 'pwd'
                 sh 'ls -la'
