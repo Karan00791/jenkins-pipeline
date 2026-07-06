@@ -29,7 +29,7 @@ pipeline{
         stage('Build'){
             steps{
                 echo 'building the application code webhoooooooooks'
-                sh 'mvn install'
+                sh "mvn install"
             }
         }
         stage('Test'){
