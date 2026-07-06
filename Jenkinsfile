@@ -21,7 +21,7 @@ pipeline{
          stage ('verify environment'){
             steps{
                 sh 'java -version'
-                sh 'maven -version'
+                sh 'mvn -version'
                 sh 'git -version'
 
             }
