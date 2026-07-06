@@ -69,5 +69,3 @@ echo 'application was successfully build and deployed'
     }
 
     }
-}
-
