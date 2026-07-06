@@ -3,10 +3,27 @@ pipeline{
    tools{
     maven'Maven'
    }
+   environment
+{
+    APP_NAME = 'hello-world-war'
+    DEPLOY_DIR ='/var/lib/tomcat10/webapps'
+}
+
     stages{
          stage('Checkout') {
             steps {
+                echo 'dowloading source code from GIT HUB'
                 checkout scm
+                sh 'pwd'
+                sh 'ls -la'
+            }
+         }
+         stage ('verify environment'){
+            steps{
+                sh 'java -version'
+                sh 'maven -version'
+                sh 'git -version'
+
             }
          }
         stage('Build'){
@@ -23,7 +40,7 @@ pipeline{
         stage('Deploy'){
             steps{
                 echo 'deploying the application code'
-                sh "sudo cp /home/ubuntu/.m2/repository/com/efsavage/hello-world-war/1.0.0/hello-world-war-1.0.0.war /var/lib/tomcat10/webapps "
+                sh "sudo cp target/*.war ${DEPLOY_DIR}/ "
                 
             }
         }
