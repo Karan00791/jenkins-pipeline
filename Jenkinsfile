@@ -44,15 +44,15 @@ pipeline{
                     sh 'mvn package'
                 }
             }
-
-        }
-        stage('Deploy to Tomcat'){
+           stage('Deploy to Tomcat'){
             steps{
                 echo 'deploying the application code'
                 sh "sudo cp target/*.war ${DEPLOY_DIR}/ "
                 
             }
         }
+        }
+        
     }
     post{
 
