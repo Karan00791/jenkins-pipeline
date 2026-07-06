@@ -26,24 +26,47 @@ pipeline{
 
             }
          }
-        stage('Build'){
+        stage('compile'){
             steps{
-                echo 'building the application code webhoooooooooks'
-                sh "mvn install"
+                echo 'compiling the application code'
+                sh "mvn clean compile"
             }
         }
-        stage('Test'){
+        stage('Unit Test'){
             steps{
                 echo "testing the application code with"
+                sh "mvn test"
             }
+            stage('pacakage'){
+                steps{
+                    echo'creating the war file'
+                    sh 'mvn package'
+                }
+            }
+
         }
-        stage('Deploy'){
+        stage('Deploy to Tomcat'){
             steps{
                 echo 'deploying the application code'
                 sh "sudo cp target/*.war ${DEPLOY_DIR}/ "
                 
             }
         }
+    }
+    post{
+
+     always{
+    echo 'pipeline finished'
+    }
+
+    success{
+echo 'application was successfully build and deployed'
+    }
+
+    failure{
+        echo'build failed'
+    }
+
     }
 }
 
