@@ -1,4 +1,4 @@
-package com.demo
+package com.demo;
   import org.unit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 public class CalculatorTest {
